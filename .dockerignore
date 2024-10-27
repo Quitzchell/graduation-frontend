@@ -1,0 +1,9 @@
+# Add files you don't want to copy to your docker image
+.idea
+.DS_Store
+bootstrap/cache/*.php
+.editorconfig
+.styleci.yml
+.phpunit.result.cache
+
+src/frontend/node_modules
