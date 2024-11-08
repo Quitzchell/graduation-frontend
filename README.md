@@ -12,7 +12,16 @@ The project is structured to allow easy integration with different CMS backends 
    ```
 2. **Run the frontend**:
    ```bash
-   npm start
+   make
+   ```
+
+## Run Cypress
+
+1. **Run CMS backend project**:
+   Initialize one of the CMS backend project and ensure seeder has run.
+2. **Run Cypress**
+   ```bash
+   make cypress
    ```
 
 ## License
