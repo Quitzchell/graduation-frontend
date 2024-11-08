@@ -25,6 +25,3 @@ The project is structured to allow easy integration with different CMS backends 
    ```bash
    make cypress
    ```
-
-## License
-Licensed under the MIT License.
