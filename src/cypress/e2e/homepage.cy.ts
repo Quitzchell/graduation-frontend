@@ -67,7 +67,8 @@ describe('Homepage tests', () => {
                     .should('exist')
                     .and('have.attr', 'src')
                     .and('include', homepage.map.src)
-		            .and('include', homepage.map.query);
+		            .and('include', homepage.map.lat)
+		            .and('include', homepage.map.lng);
             });
     })
 });
