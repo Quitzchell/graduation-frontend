@@ -1,8 +1,9 @@
 import React from "react";
-import Paragraph from "@/app/blocks/common/Paragraph";
-import ImageContent from "@/app/blocks/common/Image";
+
 import CallToAction from "@/app/blocks/common/CallToAction";
+import ImageContent from "@/app/blocks/common/Image";
 import Map from "@/app/blocks/common/Map";
+import Paragraph from "@/app/blocks/common/Paragraph";
 
 
 const components = {

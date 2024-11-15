@@ -31,18 +31,21 @@ describe('Homepage tests', () => {
             .and('include', 'napoleon-on-horseback.jpg');
     });
 
-    it('should render the About block with correct content', {retries: 2}, () => {
-        cy.get('[data-cypress="about-block"]')
-            .should('exist')
-            .and('be.visible')
-            .within(() => {
-                cy.get('h3').should('have.text', homepage.about.header);
-                cy.get('p').eq(0).should('contain.text', homepage.about.paragraph1);
-                cy.get('p').eq(1).should('contain.text', homepage.about.paragraph2);
-                cy.get('p').eq(2).should('contain.text', homepage.about.paragraph3);
-                cy.get('p').eq(3).should('contain.text', homepage.about.paragraph4).and('contain.text', homepage.about.paragraph5);
-            });
+    it('should render the paragraph block title correctly', {retries: 2}, () => {
+        cy.get('[data-cypress="paragraph-title"]')
+            .should('have.text', homepage.about.title);
     })
+
+    it('should render the paragraph block texts correctly', { retries: 2 }, () => {
+        cy.get('[data-cypress="paragraph-text"]').within(() => {
+            cy.get('p').should('exist'); // Ensure that <p> tags are rendered
+            cy.get('p').should('have.length', homepage.about.paragraphs.length);
+            homepage.about.paragraphs.forEach((section, index) => {
+                cy.get('p').eq(index)
+                    .should('have.html', section.paragraph);
+            });
+        });
+    });
 
     it('should render the Call To Action block with correct content', {retries: 2}, () => {
         cy.get('[data-cypress="call-to-action-block"]')
@@ -67,8 +70,8 @@ describe('Homepage tests', () => {
                     .should('exist')
                     .and('have.attr', 'src')
                     .and('include', homepage.map.src)
-		            .and('include', homepage.map.lat)
-		            .and('include', homepage.map.lng);
+                    .and('include', homepage.map.lat)
+                    .and('include', homepage.map.lng);
             });
-    })
+    });
 });

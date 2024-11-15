@@ -1,14 +1,12 @@
 import Image from "next/image";
-import About from "@/app/blocks/home/About";
+
 import Blocks from "@/app/blocks/Blocks";
 
-export default function Home({headerItems, aboutItems, blocks}) {
+export default function Home({headerItems, blocks}) {
     return (
         <>
             <Header {...headerItems}/>
-            <div className={"container"}>
-                <About {...aboutItems}/>
-            </div>
+
             {blocks !== null && <Blocks blocks={blocks} />}
         </>
     );
