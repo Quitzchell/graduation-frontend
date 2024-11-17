@@ -1,4 +1,3 @@
-ssh_private_key=`cat ~/.ssh/id_rsa`
 project_name="graduation-project"
 
 .PHONY: all

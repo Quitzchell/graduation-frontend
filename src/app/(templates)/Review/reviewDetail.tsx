@@ -1,6 +1,6 @@
-import DetailHeader from "@/app/components/headers/DetailHeader";
 import MovieInfoCard from "@/app/(templates)/Review/components/MovieInfoCard";
 import Blocks from "@/app/blocks/Blocks";
+import DetailHeader from "@/app/components/headers/DetailHeader";
 
 
 export default function ReviewDetail({title, image, reviewItem, blocks}) {
@@ -13,7 +13,7 @@ export default function ReviewDetail({title, image, reviewItem, blocks}) {
                         <MovieInfoCard {...reviewItem} />
                     </>
                 )}
-                {blocks !== null && <Blocks blocks={blocks}/>}
+                {blocks && <Blocks blocks={blocks}/>}
             </section>
         </>
     )

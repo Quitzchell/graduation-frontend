@@ -1,6 +1,6 @@
-import TemplateHeader from "@/app/components/headers/TemplateHeader";
 import ReviewCard from "@/app/(templates)/Review/components/ReviewCard";
 import Blocks from "@/app/blocks/Blocks";
+import TemplateHeader from "@/app/components/headers/TemplateHeader";
 
 export default function ReviewOverview({headerItems, reviewItems, blocks}) {
     return (
@@ -11,7 +11,7 @@ export default function ReviewOverview({headerItems, reviewItems, blocks}) {
                     <ReviewCard key={reviewItem.id} reviewItem={reviewItem}/>
                 ))}
             </section>
-            {blocks !== null && <Blocks blocks={blocks}/>}
+            {blocks && <Blocks blocks={blocks}/>}
         </div>
     )
 }

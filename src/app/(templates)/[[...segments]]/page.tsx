@@ -1,15 +1,15 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import BlogOverview from "@/app/(templates)/Blog/blogOverview";
 import BlogDetail from "@/app/(templates)/Blog/blogDetail";
+import BlogOverview from "@/app/(templates)/Blog/blogOverview";
 import Home from "@/app/(templates)/Home/home";
-import ReviewOverview from "@/app/(templates)/Review/reviewOverview";
 import ReviewDetail from "@/app/(templates)/Review/reviewDetail";
+import ReviewOverview from "@/app/(templates)/Review/reviewOverview";
 import {fetchPage} from "@/services/fetchPage";
 
 const templates = {
-    home: Home,
+    homepage: Home,
     blog: BlogOverview,
     review: ReviewOverview
 };

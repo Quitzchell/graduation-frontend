@@ -7,7 +7,7 @@ export default function Home({headerItems, blocks}) {
         <>
             <Header {...headerItems}/>
 
-            {blocks !== null && <Blocks blocks={blocks} />}
+            {blocks && <Blocks blocks={blocks} />}
         </>
     );
 }

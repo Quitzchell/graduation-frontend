@@ -1,9 +1,11 @@
-import Link from "next/link";
-import {fetchMenu} from "@/services/fetchMenu";
-import MobileMenu from "@/app/components/navigation/components/MobileMenu";
-import DesktopMenu from "@/app/components/navigation/components/DesktopMenu";
-import {cn} from "@/utils/utils";
 import {ReactNode} from "react";
+
+import Link from "next/link";
+
+import DesktopMenu from "@/app/components/navigation/components/DesktopMenu";
+import MobileMenu from "@/app/components/navigation/components/MobileMenu";
+import {fetchMenu} from "@/services/fetchMenu";
+import {cn} from "@/utils/utils";
 
 
 export default async function Navigation() {

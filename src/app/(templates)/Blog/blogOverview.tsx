@@ -11,7 +11,7 @@ export default function BlogOverview({headerItems, blogPostItems, blocks}) {
                 {blogPostItems.map((blogPostItem) => (
                     <BlogPostCard key={blogPostItem.id} blogPostItem={blogPostItem}/>
                 ))}
-                {blocks !== null && <Blocks blocks={blocks}/>}
+                {blocks && <Blocks blocks={blocks}/>}
             </section>
         </div>
     );
