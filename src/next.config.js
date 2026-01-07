@@ -7,11 +7,11 @@ const nextConfig = {
     images: {
         unoptimized: true,
         remotePatterns: [
-            // Local
+            // Local (via hosts file)
             {
-                protocol: "https",
+                protocol: "http",
                 hostname: "graduation-project-admin.local.alles.onl",
-                port: "",
+                port: "8080",
                 pathname: "/**",
             },
             // Staging

@@ -6,36 +6,26 @@ services:
             dockerfile: dev.dockerfile
         ports:
             - "3000:3000"
-        labels:
-            - "traefik.enable=true"
-            - "traefik.docker.network=traefik_network"
-            - 'traefik.http.routers.${PROJECT_NAME}-npm.rule=Host(`${PROJECT_NAME}.local.alles.onl`)'
-            - "traefik.http.routers.${PROJECT_NAME}-npm.entrypoints=npm,websecure"
-            - "traefik.http.routers.${PROJECT_NAME}-npm.service=${PROJECT_NAME}-npm"
-            - "traefik.http.services.${PROJECT_NAME}-npm.loadbalancer.server.port=3000"
         volumes:
             - ./src:/var/www/html
+            - /var/www/html/node_modules
+        environment:
+            - NODE_ENV=development
         networks:
             - default
-            - traefik_network
+            - graduation-filament-cms_default
 
     cypress:
         image: cypress/included:13.15.0
         container_name: cypress
         depends_on:
-            - frontend # Wait for the frontend to be ready before running tests
-        extra_hosts:
-            - "graduation-project.local.alles.onl:host-gateway"
-        networks:
-            - default
-            - traefik_network
+            - frontend
         environment:
-            - CYPRESS_baseUrl=http://${PROJECT_NAME}.local.alles.onl:3000 # Cypress will target the frontend service
+            - CYPRESS_baseUrl=http://frontend:3000
         volumes:
-            - ./src:/e2e # Mount frontend code into Cypress container
+            - ./src:/e2e
         working_dir: /e2e
 
 networks:
-    default:
-    traefik_network:
+    graduation-filament-cms_default:
         external: true

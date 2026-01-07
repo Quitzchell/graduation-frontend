@@ -1,9 +1,25 @@
-# Add files you don't want to copy to your docker image
+# IDE and OS
 .idea
 .DS_Store
-bootstrap/cache/*.php
-.editorconfig
-.styleci.yml
-.phpunit.result.cache
+.vscode
 
-src/frontend/node_modules
+# Git
+.git
+.gitignore
+
+# Node modules (will be installed in container)
+src/node_modules
+node_modules
+
+# Next.js build output
+src/.next
+.next
+
+# Cypress artifacts
+src/cypress/videos
+src/cypress/screenshots
+
+# Misc
+*.log
+.env.local
+.env.*.local
